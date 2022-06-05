@@ -1,2 +1,74 @@
 *.class
+
+# maven
+*.versionsBackup
+
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+*/target/
+*/lib_managed/
+*/src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Eclipse specific
+.pmd
+.classpath
+.project
+.settings/
+
+# IntelliJ-IDEA specific
+*.iml
+.idea/
+.idea_modules/
+
+#Misc
+temp
+foo
+**.crc
+**.lock
+
+#aws key
+# **/rootkey.csv
+
+#test logs
 *.log
+**/log
+**/logs
+
+#syncthing
+.stfolder
+
+#temporary code that are not supposed to be uploaded.
+**/spike*.*
+
+#vscode
+.vscode
+
+**/.rootkey.csv
+
+**/.spark-dist
+**/.ipynb_checkpoints
+
+#flatten-maven-plugin
+.flattened-pom.xml
+pom.xml.flatten
+
+
+#pytest
+**/.pytest_cache
+
+#conda
+**/conda/.env
+
+#apm sitl state files
+uav/**/eeprom.bin
+uav/**/*.DAT
