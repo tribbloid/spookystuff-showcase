@@ -37,6 +37,7 @@ trait SpookyRunnable extends SpookyEnv {
     println("-------------------returned " + array.length + " rows------------------")
     println(s"------------------fetched ${spooky.spookyMetrics.pagesFetched.value} pages-----------------")
     println(
-      s"------------------${spooky.spookyMetrics.pagesFetchedFromCache.value} pages from web cache-----------------")
+      s"------------------${spooky.spookyMetrics.pagesFetchedFromCache.value} pages from web cache-----------------"
+    )
   }
 }

@@ -9,9 +9,8 @@ import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
 /**
-  * Created by peng on 22/06/14.
-  * allowing execution as a main object and tested as a test class
-  * keep each test as small as possible, by using downsampling & very few iterations
+  * Created by peng on 22/06/14. allowing execution as a main object and tested as a test class keep each test as small
+  * as possible, by using downsampling & very few iterations
   */
 trait SpookyEnv {
 
