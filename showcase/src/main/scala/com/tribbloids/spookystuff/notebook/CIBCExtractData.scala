@@ -6,7 +6,7 @@ import com.tribbloids.spookystuff.dsl._
 import com.tribbloids.spookystuff.extractors.impl.Lit
 import com.tribbloids.spookystuff.showcase.SpookyRunnable
 
-object CIBCExtractIncome extends SpookyRunnable {
+object CIBCExtractData extends SpookyRunnable {
 
   val file = {
     "file://~/Synced/Dropbox/__CORPORATE/BalanceSheet/DepositAccount_10012023.pdf"

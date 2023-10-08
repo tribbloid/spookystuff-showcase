@@ -1,7 +1,6 @@
 package com.tribbloids.spookystuff.showcase
 
 import com.tribbloids.spookystuff.SpookyContext
-import com.tribbloids.spookystuff.utils.CommonConst
 import org.apache.spark.sql.{SQLContext, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -34,7 +33,7 @@ trait SpookyEnv {
 
     val spooky = new SpookyContext(sql)
 
-    val dirs = spooky.dirConf
+//    val dirs = spooky.dirConf
 
 //    if (dirs.root == null) {
 //      dirs.root = s"file://${CommonConst.USER_DIR}/temp/spooky-local/$appName/"
