@@ -2,8 +2,6 @@ package com.tribbloids.spookystuff.notebook
 
 import com.tribbloids.spookystuff.SpookyContext
 import com.tribbloids.spookystuff.actions._
-import com.tribbloids.spookystuff.dsl._
-import com.tribbloids.spookystuff.extractors.impl.Lit
 import com.tribbloids.spookystuff.showcase.SpookyRunnable
 
 object CIBCExtractIncome extends SpookyRunnable {
@@ -71,7 +69,7 @@ object CIBCExtractIncome extends SpookyRunnable {
 
   override def doMain(spooky: SpookyContext): Any = {
 
-    val fetched = spooky
+    spooky
       .fetch(
         Wget(file)
       )

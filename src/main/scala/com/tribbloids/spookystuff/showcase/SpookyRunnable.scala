@@ -2,12 +2,14 @@ package com.tribbloids.spookystuff.showcase
 
 import com.tribbloids.spookystuff.SpookyContext
 import com.tribbloids.spookystuff.rdd.FetchedDataset
+import com.tribbloids.spookystuff.utils.lifespan.LocalCleanable
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.Dataset
 
-trait SpookyRunnable extends SpookyEnv {
+trait SpookyRunnable extends SpookyEnv with LocalCleanable {
 
-  override def finalize(): Unit = {
+  final override def cleanImpl(): Unit = {
+
     sc.stop()
   }
 
