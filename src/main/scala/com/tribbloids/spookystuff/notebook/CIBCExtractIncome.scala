@@ -3,12 +3,12 @@ package com.tribbloids.spookystuff.notebook
 import com.tribbloids.spookystuff.SpookyContext
 import com.tribbloids.spookystuff.actions._
 import com.tribbloids.spookystuff.showcase.SpookyRunnable
+import com.tribbloids.spookystuff.utils.{CommonConst, CommonUtils}
 
 object CIBCExtractIncome extends SpookyRunnable {
 
-  val file = {
-    "file://~/Synced/Dropbox/__CORPORATE/BalanceSheet/DepositAccount_10012023.pdf"
-  }
+  val file =
+    CommonUtils.\\\(CommonConst.USER_HOME, "Synced/Dropbox/__CORPORATE/BalanceSheet/DepositAccount_10012023.pdf")
 
   override def doMain(spooky: SpookyContext): Any = {
 
@@ -16,6 +16,6 @@ object CIBCExtractIncome extends SpookyRunnable {
       .fetch(
         Wget(file)
       )
-      .savePages_!("~/Desktop/yyy", overwrite = true)
+      .savePages_!(CommonUtils.\\\(CommonConst.USER_HOME, "Desktop", "yyy"), overwrite = true)
   }
 }
