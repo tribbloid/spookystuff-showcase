@@ -26,7 +26,7 @@ object DownloadIntegrationSite extends SpookyRunnable {
     import com.tribbloids.spookystuff.utils.CommonViews.StringView
 
     val pathTemplate: GenExtractor[FR, String] = S.uri
-      .andFn { uri =>
+      .andMap { uri =>
         val base = uri.split(SPLITTER).last
         CommonConst.USER_TEMP_DIR \\ "test-sites" \\ base
       }
@@ -35,7 +35,7 @@ object DownloadIntegrationSite extends SpookyRunnable {
 
       fd.persist()
       val originalVersion = fd.wget(
-        S.uri.andFn { uri =>
+        S.uri.andMap { uri =>
           try {
             val Array(first, last) = uri.split(SPLITTER)
             first + "id_" + SPLITTER_MIN + last
