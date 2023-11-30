@@ -74,7 +74,7 @@ object DownloadIntegrationSite extends SpookyRunnable {
         "https://web.archive.org/web/20170707111752/http://webscraper.io:80/test-sites"
       )
       .save()
-      .wgetJoin(S"h2.site-heading a", cooldown = coolDown, keyBy = keyBy)
+      .wgetFork(S"h2.site-heading a", cooldown = coolDown, keyBy = keyBy)
       .save()
       .wgetExplore(S"div.sidebar-nav a", cooldown = coolDown, keyBy = keyBy)
       .save()
