@@ -1,7 +1,7 @@
 package com.tribbloids.spookystuff.notebook
 
 import com.tribbloids.spookystuff.SpookyContext
-import com.tribbloids.spookystuff.actions.{Trace, Wget}
+import com.tribbloids.spookystuff.actions.{Action, Wget}
 import com.tribbloids.spookystuff.extractors.{FR, GenExtractor}
 import com.tribbloids.spookystuff.rdd.FetchedDataset
 import com.tribbloids.spookystuff.showcase.SpookyRunnable
@@ -57,8 +57,8 @@ object DownloadIntegrationSite extends SpookyRunnable {
 
     import com.tribbloids.spookystuff.dsl.DSL._
 
-    val keyBy: Trace => String = { trace =>
-      val uri = trace
+    val keyBy: List[Action] => String = { actions =>
+      val uri = actions
         .collectFirst {
           case wget: Wget => wget.uri.value
         }
