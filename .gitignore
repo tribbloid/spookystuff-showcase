@@ -11,6 +11,7 @@
 # gradle
 **/.gradle
 **/build
+**/bin
 
 # sbt
 .cache/
@@ -18,8 +19,9 @@
 .lib/
 dist/*
 target/
-lib_managed/
-src_managed/
+**/target/
+**/lib_managed/
+**/src_managed/
 project/boot/
 project/plugins/project/
 
@@ -52,7 +54,8 @@ project/plugins/project/
 
 # Compiler
 output
-*/target/
+**/out
+**/target/
 
 #Misc
 temp
@@ -61,8 +64,10 @@ foo
 **.crc
 **.lock
 
-#aws key
-**/rootkey.csv
+# test logs
+*.log
+**/log
+**/logs
 
 #publish
 dev/publish.sh
