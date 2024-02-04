@@ -1,11 +1,11 @@
 package com.tribbloids.spookystuff.notebook
 
+import ai.acyclic.prover.commons.spark.Envs
 import com.tribbloids.spookystuff.SpookyContext
 import com.tribbloids.spookystuff.actions.{Trace, Wget}
 import com.tribbloids.spookystuff.extractors.{FR, GenExtractor}
 import com.tribbloids.spookystuff.rdd.FetchedDataset
 import com.tribbloids.spookystuff.showcase.SpookyRunnable
-import com.tribbloids.spookystuff.utils.CommonConst
 
 /**
   * move the entire webscraper.io/test-sites/ into a local dir for integration tests may use wayback machine:
@@ -23,12 +23,11 @@ object DownloadIntegrationSite extends SpookyRunnable {
   implicit class FDSView(fd: FetchedDataset) {
 
     import com.tribbloids.spookystuff.dsl.DSL._
-    import com.tribbloids.spookystuff.utils.CommonViews.StringView
 
     val pathTemplate: GenExtractor[FR, String] = S.uri
       .andMap { uri =>
         val base = uri.split(SPLITTER).last
-        CommonConst.USER_TEMP_DIR \\ "test-sites" \\ base
+        Envs.USER_TEMP_DIR :\ "test-sites" :\ base
       }
 
     def save(): FetchedDataset = {
