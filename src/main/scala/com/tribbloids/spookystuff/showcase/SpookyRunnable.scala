@@ -2,7 +2,7 @@ package com.tribbloids.spookystuff.showcase
 
 import com.tribbloids.spookystuff.SpookyContext
 import com.tribbloids.spookystuff.rdd.FetchedDataset
-import com.tribbloids.spookystuff.utils.lifespan.LocalCleanable
+import com.tribbloids.spookystuff.commons.lifespan.LocalCleanable
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.Dataset
 
